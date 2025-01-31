@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Reddit Zen",
+    "version": "1.0",
+    "description": "Filters post on Reddit based on user defined keywords",
+    "permissions": ["storage", "activeTab", "scripting"],
+    "host_permissions": ["*://www.reddit.com/*"],
+
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/icon-16.png",
+            "48": "images/icon-48.png",
+            "128": "images/icon-128.png"
+        }
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["*://www.reddit.com/*"],
+            "js": ["content.js"]
+        }
+        
+    ]
+}
