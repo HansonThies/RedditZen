@@ -27,7 +27,7 @@ chrome.storage.local.get(["keywords", "filterEnabled"], function (data) {
                 // Check if there are keywords this avoids a bug where it would otherwise remove all posts if no keywords found
                 if(blockedKeywords.length > 0){
                     // Check if post contains keywords and remove if so
-                    if(blockedKeywords.some(keyword => titleText.includes(keyword.toLowerCase()))) {
+                    if (blockedKeywords.some(keyword => new RegExp(`\\b${keyword}\\b`, 'i').test(titleText))) {
                         if(filterEnabled){
                             console.log("Removed post titled: " + titleText);
                             post.style.display = "none"; // hide the post

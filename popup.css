@@ -101,7 +101,7 @@ button:hover {
 }
 
 input:checked + .slider {
-    background-color: #ff4500; /* Reddit Orange */
+    background-color: #ff4500;
 }
 
 input:checked + .slider:before {
